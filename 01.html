@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+ <html>
+  <head>
+    <title>Book Catalogue</title>
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f8f8f8;
+        margin: 20px;
+      }
+      .cat-btn {
+        background-color: #ffd700;
+        color: #333;
+        border: none;
+        padding: 8px 15px;
+        border-radius: 4px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background-color 0.2s;
+      }
+      .cat-btn:hover {
+        background-color: #e5c300;
+      }
+      .cart-img {
+        vertical-align: middle;
+        margin-right: 5px;
+      }
+      .cat-table {
+        width: 80%;
+        margin: 30px auto;
+        border-collapse: collapse;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+      .cat-table,
+      .cat-table th,
+      .cat-table td {
+        border: 1px solid #ccc;
+      }
+      .cat-table th,
+      .cat-table td {
+        padding: 10px 8px;
+        vertical-align: top;
+        font-size: 14px;
+      }
+      .cat-table th {
+        background-color: #ffcc99;
+        color: #444;
+        text-align: center;
+        font-size: 1.1em;
+        text-transform: uppercase;
+      }
+      .book-img {
+        width: 90px;
+        height: 110px;
+        display: block;
+        margin: 0 auto;
+        border: 1px solid #ddd;
+        padding: 2px;
+        background-color: white;
+        object-fit: cover;
+      }
+      .book-info {
+        font-size: 1em;
+        line-height: 1.5;
+        color: #333;
+      }
+      .price {
+        font-size: 1.1em;
+        font-weight: bold;
+        color: #007700;
+        text-align: right;
+      }
+      .img-col {
+        width: 15%;
+        text-align: center;
+      }
+      .desc-col {
+        width: 45%;
+      }
+      .price-col {
+        width: 15%;
+      }
+      .cart-col {
+        width: 25%;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+   <table class="cat-table">
+      <tr>
+        <th class="img-col">Cover</th>
+        <th class="desc-col">Book Details</th>
+        <th class="price-col">Price</th>
+        <th class="cart-col">Action</th>
+      </tr>
+      <tr>
+        <td class="img-col">
+          <img src="book1.jpeg" alt="python" class="book-img" />
+        </td>
+        <td class="book-info">
+          Book: Python Programming for Absolute Beginners<br />Author: Anthony Tekk<br 
+/>Publication: Packt
+        </td>
+        <td class="price">Rs.500</td>
+        <td class="cart-col">
+          <button class="cat-btn">
+            <img
+              src="shopping-cart.png"
+              alt="Cart Icon"
+              width="16"
+              class="cart-img"
+            />Add to cart
+          </button>
+        </td>
+      </tr>
+      <tr>
+        <td class="img-col">
+          <img src="book2.png" alt="git and github" class="book-img" />
+        </td>
+        <td class="book-info">
+          Book: Introduction to Git and GitHub<br />Author: Lumen School<br />Publication: Packt
+        </td>
+        <td class="price">Rs.300</td>
+        <td class="cart-col">
+          <button class="cat-btn">
+            <img
+              src="shopping-cart.png"
+              alt="Cart Icon"
+              width="16"
+              class="cart-img"
+            />Add to cart
+          </button>
+        </td>
+      </tr>
+      <tr>
+        <td class="img-col">
+          <img src="book3.png" alt="c with audrino" class="book-img" />
+        </td>
+        <td class="book-info">
+          Book: C Programming with Arduino<br />Author: Warwick A. Smith<br />Publication: 
+Elektor
+        </td>
+        <td class="price">Rs.1000</td>
+        <td class="cart-col">
+          <button class="cat-btn">
+            <img
+              src="shopping-cart.png"
+              alt="Cart Icon"
+              width="16"
+              class="cart-img"
+            />Add to cart
+          </button>
+        </td>
+      </tr>
+      <tr>
+        <td class="img-col">
+          <img src="book4.png" alt="crack interview" class="book-img" />
+        </td>
+        <td class="book-info">
+          Book: **HTML in 24 hours**<br />Author: Sam Peter<br />Publication:
+          Sampublication
+        </td>
+        <td class="price">Rs.1500</td>
+        <td class="cart-col">
+          <button class="cat-btn">
+            <img
+              src="shopping-cart.png"
+              alt="Cart Icon"
+              width="16"
+              class="cart-img"
+            />Add to cart
+          </button>
+        </td>
+      </tr>
+    </table>
+  </body>
+ </html>
