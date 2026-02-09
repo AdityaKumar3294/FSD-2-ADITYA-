@@ -8,11 +8,12 @@
 <body>
     <p id = "demo"></p>
     <script>
-        var cars = {"name":"Ford", "price": 5000};
-        document.getElementById("demo").innerHTML = cars.name + " price is " + cars.price;
-        for (var key in cars){
-            document.write("<br>" + key + ":" + cars[key]);
-            
+        var num = parseInt(prompt("Enter a number"));
+        if (num % 2 == 0){
+            document.getElementById("demo").innerHTML = "Even number";
+        }
+        else{
+            document.getElementById("demo").innerHTML = "Odd number";
         }
     </script>
 </body>
