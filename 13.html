@@ -6,15 +6,19 @@
     <title>Document</title>
 </head>
 <body>
-<p id = "demo"></p>
+    <p id = "demo"></p>
     <script>
-        var names = new Set(["Ram", "Shyam", "Hulk" , "Aditya"]);
-        names.add("Ramesh");
-        var txt ="";
-        names.forEach(function(value){
-            txt = txt + value + "<br>";
-        });
+        const fruits = new Map((
+            ["apple",500],
+            ["banana",200],
+            ["grapes",300]
+        ))
+        let txt = "";
+        for (const [key,value] of fruits.entries()){
+            txt += key + ": " + value + "<br>";
+        }
         document.getElementById("demo").innerHTML = txt;
     </script>
+
 </body>
 </html>
