@@ -10,9 +10,26 @@
         var username = document.getElementById("Username").value;
         var password = document.getElementById("Password").value;
         var msg = "";
-        if(username.length == 0){
-            alert("Username Cannot be empty");
+        if(username.length <= 0){
+            //alert("Username Cannot be empty");
+            msg += "Username Cannot be Empty\n";
         }
+        if(password.length <= 0){
+            msg += "Password Cannot be Empty\n";
+        }
+        if (msg.length > 0){
+            alert(msg);
+        }
+        if (password.length < 8){
+            alert("Password must be atleast 8 characters long");
+        }
+        if (username == "admin" && password == "admin123"){
+            alert("Login Successful");
+        }
+        else{
+            alert("Invalid Username or Password");
+        }
+
     }
 </script>
 <body>
