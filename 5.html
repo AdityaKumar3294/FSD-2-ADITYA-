@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id = "demo"></p>
+    <p id = "demo1"></p>
+    <p id = "demo2"></p>
+    <script>
+        var names = ["raj" , "mohan" , "rahul" , "rita"];
+        document.getElementById("demo").innerHTML = names;
+        document.getElementById("demo1").innerHTML = "total length is" + names.length;
+        document.write(names[0]);
+        document.getElementById("demo2").innerHTML = names.join(" : ");
+        for(var i=0; i<names.length; i++){
+            document.write("Welcome " + names[i] + "<br>");
+        }
+
+    </script>
+</body>
+</html>

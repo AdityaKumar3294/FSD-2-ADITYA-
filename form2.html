@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        function check() {
+            var pas = document.getElementById("password").value;
+            var cpwd = document.getElementById("cpasswd").value;
+            if(pas.length <=0 && cpwd.length<=0){
+                alert("empty");
+                return false;
+            }
+            if (uid.length <= 0) {
+                alert("Username cannot be empty");
+                return false;
+            }
+
+            if (pwd.length <= 0) {
+                alert("Password cannot be empty");
+                return false;
+            }
+            if(pas == cpwd){
+                alert("registration sucessful");
+                return true;
+            }else{
+                alert ("not same");
+                return false;
+            }
+
+            alert("Form submitted successfully");
+            return true;
+        }
+    </script>
+</head>
+<body>
+
+    <form action="" method="post" onsubmit="return check()">
+        <label for="passwrod">password</label>
+        <input type="passwrod" id="passwrod" name="password"><br><br>
+
+        <label for="password"> confirm Password:</label>
+        <input type="password" id="cpasswd" name=" confirm password"><br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+
+</body>
+</html>
