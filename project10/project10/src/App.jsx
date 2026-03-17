@@ -15,13 +15,21 @@ function App() {
       <button onClick={() => setStatus(2)}>Show Teacher</button>
       <button onClick={() => setStatus(3)}>Show Admin</button>
 
-      {/* Conditional Rendering */}
-      {status === 1 && <h2>Welcome Student</h2>}
-      {status === 2 && <h2>Welcome Teacher</h2>}
-      {status === 3 && <h2>Welcome Admin</h2>}
+     /* Multiple conditions */
+{
+  status === 1 ? (
+    <h2>Welcome Student</h2>
+  ) : status === 2 ? (
+    <h2>Welcome Teacher</h2>
+  ) : status === 3 ? (
+    <h2>Welcome Admin</h2>
+  ) : (
+    <h2>Please select a role</h2>
+  )
+}
 
-    </div>
-  );
+</div>
+);
 }
 
 export default App;
