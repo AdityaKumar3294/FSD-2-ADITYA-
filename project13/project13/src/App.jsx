@@ -1,68 +1,101 @@
-import React from "react";
+import React, { useState } from "react";
 
-function App() {
+function Login() {
+  // State to store form data
+  const [form, setForm] = useState({
+    email: "",
+    password: ""
+  });
+
+  // State to store validation errors
+  const [errors, setErrors] = useState({});
+
+  // State to toggle password visibility
+  const [showPassword, setShowPassword] = useState(false);
+
+  // Handle input change
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+
+    setForm({
+      ...form,
+      [name]: value
+    });
+  };
+
+  // Validate form
+  const validate = () => {
+    let newErrors = {};
+
+    if (!form.email) {
+      newErrors.email = "Email is required";
+    } else if (!/\S+@\S+\.\S+/.test(form.email)) {
+      newErrors.email = "Invalid email format";
+    }
+
+    if (!form.password) {
+      newErrors.password = "Password is required";
+    } else if (form.password.length < 6) {
+      newErrors.password = "Password must be at least 6 characters";
+    }
+
+    return newErrors;
+  };
+
+  // Handle submit
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const validationErrors = validate();
+    setErrors(validationErrors);
+
+    if (Object.keys(validationErrors).length === 0) {
+      alert("Login Successful ✅");
+      console.log(form);
+    }
+  };
+
   return (
-    <div style={styles.container}>
-      <div style={styles.box}>
-        <h2 style={styles.heading}>Login</h2>
+    <div style={{ maxWidth: "400px", margin: "auto" }}>
+      <h2>Login Form</h2>
 
-        <input
-          type="text"
-          placeholder="Username"
-          style={styles.input}
-        />
+      <form onSubmit={handleSubmit}>
+        {/* Email */}
+        <div>
+          <label>Email:</label><br />
+          <input
+            type="text"
+            name="email"
+            value={form.email}
+            onChange={handleChange}
+          />
+          {errors.email && <p style={{ color: "red" }}>{errors.email}</p>}
+        </div>
 
-        <input
-          type="password"
-          placeholder="Password"
-          style={styles.input}
-        />
+        {/* Password */}
+        <div>
+          <label>Password:</label><br />
+          <input
+            type={showPassword ? "text" : "password"}
+            name="password"
+            value={form.password}
+            onChange={handleChange}
+          />
+          <br />
+          <button
+            type="button"
+            onClick={() => setShowPassword(!showPassword)}
+          >
+            {showPassword ? "Hide" : "Show"} Password
+          </button>
+          {errors.password && <p style={{ color: "red" }}>{errors.password}</p>}
+        </div>
 
-        <button style={styles.button}>Login</button>
-      </div>
+        <br />
+        <button type="submit">Login</button>
+      </form>
     </div>
   );
 }
 
-const styles = {
-  container: {
-    height: "100vh",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "#f5f5f5",
-  },
-  box: {
-    background: "#fff",
-    padding: "30px",
-    width: "300px",
-    borderRadius: "8px",
-    boxShadow: "0 4px 10px rgba(0,0,0,0.1)",
-    textAlign: "center",
-  },
-  heading: {
-    marginBottom: "20px",
-    color: "#444",
-  },
-  input: {
-    width: "100%",
-    padding: "10px",
-    marginBottom: "15px",
-    border: "1px solid #ddd",
-    borderRadius: "5px",
-    outline: "none",
-    fontSize: "14px",
-  },
-  button: {
-    width: "100%",
-    padding: "10px",
-    backgroundColor: "#6c63ff",
-    color: "#fff",
-    border: "none",
-    borderRadius: "5px",
-    cursor: "pointer",
-    fontWeight: "bold",
-  },
-};
-
-export default App;
+export default Login;
