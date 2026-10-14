@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Entry Form</title>
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Arial, Helvetica, sans-serif;
+        }
+
+        body{
+            background:#f4f4f4;
+        }
+
+        .container{
+            width:550px;
+            margin:30px auto;
+            background:#fff;
+            border:2px solid #333;
+            padding:25px;
+        }
+
+        h2{
+            text-align:center;
+            margin-bottom:20px;
+            text-decoration:underline;
+        }
+
+        table{
+            width:100%;
+        }
+
+        td{
+            padding:8px;
+            vertical-align:top;
+        }
+
+        td:first-child{
+            font-weight:bold;
+            width:35%;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        input[type="date"],
+        input[type="tel"],
+        select,
+        textarea{
+            width:100%;
+            padding:7px;
+            border:1px solid #999;
+            border-radius:4px;
+        }
+
+        textarea{
+            resize:none;
+        }
+
+        .gender label,
+        .hobbies label{
+            margin-right:10px;
+            font-weight:normal;
+        }
+
+        .buttons{
+            text-align:center;
+            margin-top:20px;
+        }
+
+        button{
+            padding:8px 20px;
+            margin:5px;
+            border:none;
+            border-radius:5px;
+            cursor:pointer;
+            color:white;
+        }
+
+        .submit{
+            background:green;
+        }
+
+        .reset{
+            background:red;
+        }
+
+        button:hover{
+            opacity:0.8;
+        }
+
+        .error{
+            color:red;
+            font-size:13px;
+            margin-top:3px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Student Entry Form</h2>
+
+<form id="studentForm">
+
+<table>
+
+<tr>
+    <td>Student ID</td>
+    <td>
+        <input type="text" id="studentId" placeholder="Enter Student ID">
+    </td>
+</tr>
+
+<tr>
+    <td>Student Name</td>
+    <td>
+        <input type="text" id="studentName" placeholder="Enter Your Name">
+    </td>
+</tr>
+
+<tr>
+    <td>Father's Name</td>
+    <td>
+        <input type="text" id="fatherName" placeholder="Enter Father's Name">
+    </td>
+</tr>
+
+<tr>
+    <td>Mother's Name</td>
+    <td>
+        <input type="text" id="motherName" placeholder="Enter Mother's Name">
+    </td>
+</tr>
+
+<tr>
+    <td>Date of Birth</td>
+    <td>
+        <input type="date" id="dob">
+    </td>
+</tr>
+
+<tr>
+    <td>Gender</td>
+    <td class="gender">
+        <label>
+            <input type="radio" name="gender" value="Male"> Male
+        </label>
+
+        <label>
+            <input type="radio" name="gender" value="Female"> Female
+        </label>
+
+        <label>
+            <input type="radio" name="gender" value="Other"> Other
+        </label>
+    </td>
+</tr>
+
+<tr>
+    <td>Mobile No.</td>
+    <td>
+        <input type="tel" id="mobile" placeholder="Enter Mobile Number">
+    </td>
+</tr>
+
+<tr>
+    <td>Email ID</td>
+    <td>
+        <input type="email" id="email" placeholder="Enter Email">
+    </td>
+</tr>
+
+<tr>
+    <td>Password</td>
+    <td>
+        <input type="password" id="password" placeholder="Enter Password">
+    </td>
+</tr>
+
+<tr>
+    <td>Address</td>
+    <td>
+        <textarea id="address" rows="4"
+        placeholder="Enter Address"></textarea>
+    </td>
+</tr>
+
+<tr>
+    <td>Department</td>
+    <td>
+        <select id="department">
+            <option value="">-- Select Department --</option>
+            <option>CSE</option>
+            <option>IT</option>
+            <option>ECE</option>
+            <option>EEE</option>
+            <option>ME</option>
+        </select>
+    </td>
+</tr>
+
+<tr>
+    <td>Course</td>
+    <td>
+        <select id="course">
+            <option value="">-- Select Course --</option>
+            <option>B.Tech</option>
+            <option>M.Tech</option>
+            <option>BCA</option>
+            <option>MCA</option>
+            <option>B.Sc</option>
+        </select>
+    </td>
+</tr>
+
+<tr>
+    <td>Semester</td>
+    <td>
+        <select id="semester">
+            <option value="">-- Select Semester --</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            <option>6</option>
+            <option>7</option>
+            <option>8</option>
+        </select>
+    </td>
+</tr>
+
+<tr>
+    <td>Hobbies</td>
+    <td class="hobbies">
+
+        <label>
+            <input type="checkbox" name="hobby" value="Reading">
+            Reading
+        </label>
+
+        <label>
+            <input type="checkbox" name="hobby" value="Sports">
+            Sports
+        </label>
+
+        <label>
+            <input type="checkbox" name="hobby" value="Music">
+            Music
+        </label>
+
+    </td>
+</tr>
+
+<tr>
+    <td>Upload Photo</td>
+    <td>
+        <input type="file" id="photo" accept="image/*">
+    </td>
+</tr>
+
+</table>
+
+<div class="buttons">
+    <button type="submit" class="submit">Submit</button>
+    <button type="reset" class="reset">Reset</button>
+</div>
+
+</form>
+
+</div>
+
+
+<script>
+
+document.getElementById("studentForm").addEventListener("submit", function(event) {
+
+    // Prevent form from submitting automatically
+    event.preventDefault();
+
+    // Get values
+    let studentId = document.getElementById("studentId").value.trim();
+    let studentName = document.getElementById("studentName").value.trim();
+    let fatherName = document.getElementById("fatherName").value.trim();
+    let motherName = document.getElementById("motherName").value.trim();
+    let dob = document.getElementById("dob").value;
+    let mobile = document.getElementById("mobile").value.trim();
+    let email = document.getElementById("email").value.trim();
+    let password = document.getElementById("password").value;
+    let address = document.getElementById("address").value.trim();
+    let department = document.getElementById("department").value;
+    let course = document.getElementById("course").value;
+    let semester = document.getElementById("semester").value;
+    let photo = document.getElementById("photo").files[0];
+
+    // Check gender
+    let gender = document.querySelector(
+        'input[name="gender"]:checked'
+    );
+
+    // Check hobbies
+    let hobbies = document.querySelectorAll(
+        'input[name="hobby"]:checked'
+    );
+
+
+    // 1. Required field validation
+
+    if(studentId === "") {
+        alert("Please enter Student ID.");
+        return;
+    }
+
+    if(studentName === "") {
+        alert("Please enter Student Name.");
+        return;
+    }
+
+    if(fatherName === "") {
+        alert("Please enter Father's Name.");
+        return;
+    }
+
+    if(motherName === "") {
+        alert("Please enter Mother's Name.");
+        return;
+    }
+
+    if(dob === "") {
+        alert("Please select Date of Birth.");
+        return;
+    }
+
+
+    // 2. Gender validation
+
+    if(!gender) {
+        alert("Please select your gender.");
+        return;
+    }
+
+
+    // 3. Mobile number validation
+
+    let mobilePattern = /^[0-9]{10}$/;
+
+    if(!mobilePattern.test(mobile)) {
+        alert("Please enter a valid 10-digit mobile number.");
+        return;
+    }
+
+
+    // 4. Email validation
+
+    let emailPattern =
+        /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if(!emailPattern.test(email)) {
+        alert("Please enter a valid email address.");
+        return;
+    }
+
+
+    // 5. Password validation
+
+    if(password.length < 6) {
+        alert("Password must contain at least 6 characters.");
+        return;
+    }
+
+
+    // 6. Address validation
+
+    if(address === "") {
+        alert("Please enter your address.");
+        return;
+    }
+
+
+    // 7. Department validation
+
+    if(department === "") {
+        alert("Please select a department.");
+        return;
+    }
+
+
+    // 8. Course validation
+
+    if(course === "") {
+        alert("Please select a course.");
+        return;
+    }
+
+
+    // 9. Semester validation
+
+    if(semester === "") {
+        alert("Please select a semester.");
+        return;
+    }
+
+
+    // 10. Hobbies validation
+
+    if(hobbies.length === 0) {
+        alert("Please select at least one hobby.");
+        return;
+    }
+
+
+    // 11. Photo validation
+
+    if(!photo) {
+        alert("Please upload your photo.");
+        return;
+    }
+
+
+    // Check photo type
+
+    if(!photo.type.startsWith("image/")) {
+        alert("Please upload a valid image.");
+        return;
+    }
+
+
+    // Check photo size (2 MB)
+
+    if(photo.size > 2 * 1024 * 1024) {
+        alert("Photo size must be less than 2 MB.");
+        return;
+    }
+
+
+    // If everything is valid
+
+    alert(
+        "Student Registration Successful!\n\n" +
+        "Student Name: " + studentName +
+        "\nStudent ID: " + studentId +
+        "\nDepartment: " + department +
+        "\nCourse: " + course +
+        "\nSemester: " + semester
+    );
+
+});
+
+
+// Reset button functionality
+
+document.getElementById("studentForm").addEventListener("reset", function() {
+
+    alert("Form has been reset.");
+
+});
+
+</script>
+
+</body>
+</html>

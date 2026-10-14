@@ -1,0 +1,145 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial;
+}
+
+nav {
+    background-color: #173b73;
+    color: white;
+    padding: 15px 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 15px;
+}
+
+.home {
+    background-color: #f2f6fc;
+    padding: 50px 10%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.text {
+    width: 50%;
+}
+
+.text h1 {
+    color: #173b73;
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+
+.text p {
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+button {
+    background-color: #173b73;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+}
+
+.image {
+    width: 40%;
+}
+
+.image img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.about {
+    text-align: center;
+    padding: 40px 20%;
+}
+
+.about h2,
+.courses h2,
+.mentors h2 {
+    color: #173b73;
+    margin-bottom: 20px;
+}
+
+.about p {
+    line-height: 1.5;
+}
+
+.courses {
+    background-color: #f2f6fc;
+    text-align: center;
+    padding: 40px 10%;
+}
+
+.course-box {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.card {
+    background-color: white;
+    width: 220px;
+    padding: 20px;
+    box-shadow: 0 0 5px gray;
+}
+
+.card h3 {
+    color: #173b73;
+    margin-bottom: 10px;
+}
+
+.mentors {
+    text-align: center;
+    padding: 40px 10%;
+}
+
+.mentor-box {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.mentor {
+    width: 180px;
+    padding: 15px;
+}
+
+.mentor img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+
+.mentor h3 {
+    margin-top: 10px;
+    color: #173b73;
+}
+
+.mentor p {
+    margin-top: 5px;
+}
+
+footer {
+    background-color: #173b73;
+    color: white;
+    text-align: center;
+    padding: 25px;
+}
+
+footer p {
+    margin-top: 8px;
+}
